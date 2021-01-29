@@ -1,0 +1,21 @@
+.useCase {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgray;
+  height: 60px;
+  align-items: center;
+  margin: 0 40px;
+  padding: 0 20px;
+}
+
+.useCase__Button {
+  width: 90px;
+  color: white;
+  background-color: green;
+  margin-right: 10px;
+}
+.useCase__Button1 {
+  width: 90px;
+  color: white;
+  background-color: red;
+}
