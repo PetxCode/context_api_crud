@@ -32,12 +32,30 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  //Action for Reducing
+  const editingStudents = (student) => {
+    dispatch({
+      type: "EDIT_STUDENT",
+      payload: student,
+    });
+  };
+
+  //Action for Complete
+  const completeStudents = (id) => {
+    dispatch({
+      type: "COMPLETE_STUDENT",
+      payload: id,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
         std: state.students,
         addStudent,
         removeStudent,
+        editingStudents,
+        complete: completeStudents,
+        // complete: state.student.complete,
       }}
     >
       {children}
