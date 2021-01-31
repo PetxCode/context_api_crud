@@ -17,11 +17,18 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initState);
 
   //Action for Adding Students to our DataBase
-
   const addStudent = (student) => {
     dispatch({
       type: "ADD_STUDENT",
       payload: student,
+    });
+  };
+
+  //Removal Action
+  const removeStudent = (id) => {
+    dispatch({
+      type: "REMOVE_STUDENT",
+      payload: id,
     });
   };
 
@@ -30,6 +37,7 @@ export const GlobalProvider = ({ children }) => {
       value={{
         std: state.students,
         addStudent,
+        removeStudent,
       }}
     >
       {children}

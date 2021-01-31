@@ -5,7 +5,7 @@ import { GlobalContext } from "../ContextAPI/GlobalState";
 import "./UseCase.css";
 
 const UseCase = () => {
-  const { std } = useContext(GlobalContext);
+  const { std, removeStudent } = useContext(GlobalContext);
   return (
     <div>
       <center
@@ -23,7 +23,14 @@ const UseCase = () => {
               <Button className="useCase__Button">
                 <Link to={`/student/${id}`}>Edit</Link>
               </Button>
-              <Button className="useCase__Button1">Delete</Button>
+              <Button
+                className="useCase__Button1"
+                onClick={() => {
+                  removeStudent(id);
+                }}
+              >
+                Delete
+              </Button>
             </div>
           </div>
         ))}

@@ -6,6 +6,14 @@ export const AppReducer = (state, action) => {
         students: [action.payload, ...state.students],
       };
 
+    case "REMOVE_STUDENT":
+      return {
+        ...state,
+        students: state.students.filter(
+          (student) => student.id !== action.payload
+        ),
+      };
+
     default:
       return state;
   }
