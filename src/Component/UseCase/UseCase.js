@@ -21,24 +21,6 @@ const UseCase = () => {
         {std.map(({ id, name }) => (
           <div className="useCase">
             <div style={{ display: "flex", alignItems: "center" }}>
-              <Button
-                style={{
-                  width: "120px",
-                  backgroundColor: "yellow",
-                  color: "red",
-                }}
-              >
-                <Link
-                  onClick={(student) => {
-                    complete(id);
-                    console.log(complete(student.complete));
-                  }}
-                >
-                  {" "}
-                  Completed{" "}
-                </Link>
-              </Button>
-
               <div
                 style={{
                   marginLeft: "20px",
