@@ -16,6 +16,9 @@ const HeaderBar = () => {
         <Link to="/usecase" className="header__Link">
           Use Case
         </Link>
+        <Link to="/graph" className="header__Link">
+          Graph
+        </Link>
 
         <div
           style={{

@@ -8,6 +8,7 @@ import UseCase from "./Component/UseCase/UseCase";
 import FeedBack from "./Component/FeedBack/FeedBack";
 import EditStudent from "./Component/UseCase/Files/EditStudent";
 import AddStudent from "./Component/UseCase/Files/AddStudents";
+import Graph from "./Graph/Graph";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/" component={HomeScreen} />
             <Route exact path="/usecase" component={UseCase} />
             <Route exact path="/feed" component={FeedBack} />
+            <Route exact path="/graph" component={Graph} />
             <Route exact path="/student/:id" component={EditStudent} />
             <Route exact path="/add" component={AddStudent} />
           </Switch>

@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
     "antd": "^4.11.2",
+    "d3": "^6.5.0",
     "firebase": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -16,6 +17,7 @@
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.2",
+    "victory": "^35.4.8",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
