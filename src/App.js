@@ -9,6 +9,7 @@ import FeedBack from "./Component/FeedBack/FeedBack";
 import EditStudent from "./Component/UseCase/Files/EditStudent";
 import AddStudent from "./Component/UseCase/Files/AddStudents";
 import Graph from "./Graph/Graph";
+import NewContext from "./NewContextAPI/NewFIle/NewContext";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Switch>
             {" "}
             <Route exact path="/" component={HomeScreen} />
+            <Route exact path="/new" component={NewContext} />
             <Route exact path="/usecase" component={UseCase} />
             <Route exact path="/feed" component={FeedBack} />
             <Route exact path="/graph" component={Graph} />

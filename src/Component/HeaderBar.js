@@ -19,6 +19,9 @@ const HeaderBar = () => {
         <Link to="/graph" className="header__Link">
           Graph
         </Link>
+        <Link to="/new" className="header__Link">
+          New Context
+        </Link>
 
         <div
           style={{
