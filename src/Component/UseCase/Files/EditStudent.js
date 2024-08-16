@@ -1,10 +1,26 @@
 import { Button } from "antd";
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { GlobalContext } from "../../ContextAPI/GlobalState";
 import "./File.css";
-const EditStudent = () => {
+const EditStudent = (props) => {
+  const { std, editingStudents } = useContext(GlobalContext);
+
   const hist = useHistory();
-  const [input, setInput] = React.useState("");
+
+  const [input, setInput] = useState("");
+  const [selectedStudent, setSelectStudent] = useState({
+    id: "",
+    name: "",
+  });
+
+  const currentID = props.match.params.id;
+
+  useEffect(() => {
+    const studentID = currentID;
+    const selectedStudent = std.find((student) => student.id === studentID);
+    setSelectStudent(selectedStudent);
+  }, [currentID, std]);
   return (
     <div>
       <center
@@ -20,14 +36,25 @@ const EditStudent = () => {
           <input
             className="edit"
             placeholder="Edit Name"
-            value={input}
+            value={selectedStudent.name}
+            name="name"
             onChange={(e) => {
-              setInput(e.target.value);
+              setSelectStudent({
+                ...selectedStudent,
+                [e.target.name]: e.target.value,
+              });
             }}
           />
           <div>
             <Button className="useCase__Button">
-              <Link to="/student/1">Accept</Link>
+              <Link
+                onClick={() => {
+                  editingStudents(selectedStudent);
+                  hist.push("/usecase");
+                }}
+              >
+                Edit
+              </Link>
             </Button>
             <Button className="useCase__Button1">
               <Link

@@ -5,7 +5,9 @@ import { GlobalContext } from "../ContextAPI/GlobalState";
 import "./UseCase.css";
 
 const UseCase = () => {
-  const { std, removeStudent } = useContext(GlobalContext);
+  const { std, removeStudent, completeStudents, complete } = useContext(
+    GlobalContext
+  );
   return (
     <div>
       <center
@@ -18,10 +20,27 @@ const UseCase = () => {
       <center>
         {std.map(({ id, name }) => (
           <div className="useCase">
-            <div>{name}</div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div
+                style={{
+                  marginLeft: "20px",
+                  color: complete ? "black" : "red",
+                }}
+              >
+                {name}
+              </div>
+            </div>
+
             <div>
               <Button className="useCase__Button">
-                <Link to={`/student/${id}`}>Edit</Link>
+                <Link
+                  to={`/student/${id}`}
+                  // onClick={() => {
+                  //   completeStudents(std.id);
+                  // }}
+                >
+                  Edit
+                </Link>
               </Button>
               <Button
                 className="useCase__Button1"

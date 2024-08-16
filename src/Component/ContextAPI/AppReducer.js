@@ -14,6 +14,30 @@ export const AppReducer = (state, action) => {
         ),
       };
 
+    case "EDIT_STUDENT":
+      const editingStudents = action.payload;
+      const updatingStudent = state.students.map((student) => {
+        if (student.id === editingStudents.id) {
+          return editingStudents;
+        } else {
+          return student;
+        }
+      });
+      return {
+        ...state,
+        students: updatingStudent,
+      };
+
+    case "COMPLETE_STUDENT":
+      return {
+        ...state,
+        students: state.students.map((student) =>
+          student.id === action.payload
+            ? { ...student, complete: !student.complete }
+            : student
+        ),
+      };
+
     default:
       return state;
   }
